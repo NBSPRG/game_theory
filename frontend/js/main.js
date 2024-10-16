@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Fetch Centers from Backend
 function fetchCenters() {
-    fetch('http://localhost:5000/api/center/all')
+    fetch('/api/center/all')
         .then(response => response.json())
         .then(data => {
             let centersHTML = '';
