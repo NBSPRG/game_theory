@@ -6,7 +6,7 @@ let nameOfCenter = "";
 // Function to fetch center details by name
 async function fetchCenterDetails(centerName) {
     try {
-        const response = await fetch(`https://game-theory-pzci.onrender.com/api/center/name/${encodeURIComponent(centerName)}`);
+        const response = await fetch(`/api/center/name/${encodeURIComponent(centerName)}`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -126,7 +126,7 @@ function bookSlot(sportName) {
                 };
     
                 // Send a POST request to the server
-                fetch('http://localhost:5000/api/booking/create', {
+                fetch('/api/booking/create', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -145,7 +145,7 @@ function bookSlot(sportName) {
                             endTime: selectedSlot.endTime
                         };
 
-                        fetch('http://localhost:5000/api/center/update',{
+                        fetch('/api/center/update',{
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
